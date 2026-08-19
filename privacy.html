@@ -83,7 +83,11 @@ change anything.</p>
 give to them. They cannot request access; nothing is shared until you hand over
 a code. You choose at that moment whether they simply see the profile or also
 receive alerts. You can see everyone who has access and remove any of them at
-any time, and removal takes effect immediately.</p>
+any time. Removal takes effect immediately for the data: they stop being able to
+see the profile at once. One alert that was already queued before you removed
+them can still arrive, for up to six hours — it carries no medication name and
+no profile name, and once access is gone their app can no longer look up what it
+referred to.</p>
 
 <h3>Alerts</h3>
 <p>If you gave someone alerts, they are notified when a dose is reported missed,
@@ -104,7 +108,7 @@ happened, and it does not affect the app working on your phone.</p>
 <h3>Where it is kept, and how it is protected</h3>
 <p>On servers we operate in Frankfurt, Germany (Amazon Web Services,
 <code>eu-central-1</code>) — inside the EU. Data is encrypted in transit with
-TLS. On the server, medication names, profile names and notes are stored
+TLS. On the server, medication names, profile names, doses and notes are stored
 encrypted; times and statuses are not, because the server needs to read them to
 work out that a dose was missed and send an alert.</p>
 
@@ -162,22 +166,45 @@ work out that a dose was missed and send an alert.</p>
 <h2>7. Retention and deletion</h2>
 <p><strong>On your phone:</strong> kept until you delete it in the app or
 uninstall the app. Intake history older than 18 months is removed
-automatically.</p>
+automatically. When you delete something, a marker of that deletion stays behind
+for about a month, so your other devices and our server learn the thing is gone
+rather than restoring it; then the marker goes too.</p>
 <p><strong>On our server</strong> (only if you use an account): kept while your
-account exists, with intake history older than 18 months removed automatically.
-Deleting your account deletes your account, your devices, and the profiles you
-own together with their medications, schedules and history. Profiles that other
-people shared with you are theirs and are not deleted — you simply lose
-access.</p>
+account exists. The 18-month clear-out is carried out <strong>by your phone, not
+by our server</strong> — the phone removes the old history, and the removal
+travels up with the next sync. It follows that if your phone is lost or wiped
+and you never sign in again, the history already on the server stays there until
+the account is deleted. We would rather say this plainly than let "removed
+automatically" imply a clock on our side that does not exist.</p>
+<p><strong>Deleting your account</strong> takes effect immediately, with no
+grace period. It removes your account, your devices, and the profiles you own
+together with their medications, schedules, intake history and stock records.
+Profiles that other people shared with you are theirs and are not deleted — you
+simply lose access.</p>
+<p><strong>Backups.</strong> The server database is dumped nightly, encrypted,
+and each dump is kept for <strong>14 days</strong>. Deletion is immediate in the
+live database, but a copy of what was deleted can survive in a backup until that
+backup rolls off.</p>
+<p><strong>Records of who had access.</strong> When you remove someone's access
+to a profile, the record that they had it — the role and the dates, never the
+medical contents — is kept for <strong>24 months</strong> and is then deleted.
+It is kept because "who could see this, and when" is a question you or they may
+put to us, and a row deleted at the moment of revocation cannot answer it. If
+that person deletes their own DoseBuddy account first, their identity is erased
+from the record straight away; what remains with you is the impersonal fact that
+the profile was once shared with somebody.</p>
+<p><strong>The periods in one place:</strong> intake history 18 months; deletion
+markers a further month; encrypted backups 14 days; records of past access 24
+months.</p>
 <p>You can delete your account from within the app, or by writing to the address
-in section 10.</p>
+in section 12.</p>
 
 <h2>8. Your rights</h2>
 <p>If you use the app without an account, we hold no medical data about you, and
 access, correction and deletion happen on your phone.</p>
 <p>If you use an account, you have the rights the GDPR gives you over the data
 on our server: access, correction, deletion, restriction, objection, and a copy
-in a portable form. Write to the address in section 10 and we will answer within
+in a portable form. Write to the address in section 12 and we will answer within
 one month. You may also complain to your national data protection authority; in
 Spain that is the <a href="https://www.aepd.es/">AEPD</a>.</p>
 
@@ -271,7 +298,11 @@ datos del envase ni fotos, y no puede modificar nada.</p>
 dispositivo y le entregas. Nadie puede solicitar acceso; no se comparte nada
 hasta que tú das un código. En ese momento eliges si solo verá el perfil o si
 además recibirá avisos. Puedes consultar quién tiene acceso y retirárselo a
-cualquiera en cualquier momento, con efecto inmediato.</p>
+cualquiera en cualquier momento. La retirada es inmediata para los datos: deja
+de ver el perfil al instante. Un aviso que ya estuviera en cola antes de la
+retirada todavía puede llegar, hasta seis horas después; no lleva ningún nombre
+de medicamento ni de perfil, y su aplicación ya no puede consultar a qué se
+refería.</p>
 
 <h3>Avisos</h3>
 <p>Si le diste avisos, se le notifica cuando una dosis se registra como no
@@ -293,8 +324,9 @@ teléfono.</p>
 <h3>Dónde se guarda y cómo se protege</h3>
 <p>En servidores que operamos en Fráncfort, Alemania (Amazon Web Services,
 <code>eu-central-1</code>), dentro de la UE. Los datos viajan cifrados con TLS.
-En el servidor, los nombres de medicamentos y de perfiles y las notas se guardan
-cifrados; las horas y los estados no, porque el servidor necesita leerlos para
+En el servidor, los nombres de medicamentos y de perfiles, las dosis y las notas
+se guardan cifrados; las horas y los estados no, porque el servidor necesita
+leerlos para
 deducir que una dosis no se tomó y enviar el aviso.</p>
 
 <h2>3. Datos recogidos automáticamente</h2>
@@ -353,13 +385,38 @@ deducir que una dosis no se tomó y enviar el aviso.</p>
 <h2>7. Conservación y eliminación</h2>
 <p><strong>En tu teléfono:</strong> se conserva hasta que lo borres en la
 aplicación o la desinstales. El historial de tomas de más de 18 meses se elimina
-automáticamente.</p>
+automáticamente. Cuando borras algo, queda una marca de esa eliminación durante
+un mes aproximadamente, para que tus otros dispositivos y nuestro servidor se
+enteren de que ya no está en vez de restaurarlo; después la marca también
+desaparece.</p>
 <p><strong>En nuestro servidor</strong> (solo si usas cuenta): mientras exista tu
-cuenta, con el historial de más de 18 meses eliminado automáticamente. Al
-eliminar la cuenta se borran la cuenta, tus dispositivos y los perfiles que te
-pertenecen junto con sus medicamentos, horarios e historial. Los perfiles que
-otras personas compartieron contigo son suyos y no se borran: simplemente pierdes
-el acceso.</p>
+cuenta. La limpieza de los 18 meses la hace <strong>tu teléfono, no nuestro
+servidor</strong>: el teléfono elimina el historial antiguo y esa eliminación
+sube con la siguiente sincronización. De ahí se sigue que, si pierdes el teléfono
+o lo borras y no vuelves a iniciar sesión, el historial que ya está en el
+servidor permanece allí hasta que elimines la cuenta. Preferimos decirlo con
+claridad antes que dejar que «se elimina automáticamente» sugiera un reloj de
+nuestro lado que no existe.</p>
+<p><strong>Eliminar tu cuenta</strong> tiene efecto inmediato, sin periodo de
+gracia. Se borran la cuenta, tus dispositivos y los perfiles que te pertenecen
+junto con sus medicamentos, horarios, historial de tomas y existencias. Los
+perfiles que otras personas compartieron contigo son suyos y no se borran:
+simplemente pierdes el acceso.</p>
+<p><strong>Copias de seguridad.</strong> La base de datos del servidor se vuelca
+cada noche, cifrada, y cada volcado se conserva <strong>14 días</strong>. La
+eliminación es inmediata en la base de datos viva, pero una copia de lo eliminado
+puede sobrevivir en una copia de seguridad hasta que esta rote.</p>
+<p><strong>Registros de quién tuvo acceso.</strong> Cuando retiras a alguien el
+acceso a un perfil, el registro de que lo tuvo —el rol y las fechas, nunca el
+contenido médico— se conserva <strong>24 meses</strong> y después se elimina. Se
+conserva porque «quién pudo ver esto y cuándo» es una pregunta que tú o esa
+persona podéis hacernos, y una fila borrada en el momento de la retirada no puede
+responderla. Si esa persona elimina antes su propia cuenta de DoseBuddy, su
+identidad se borra del registro de inmediato; lo que queda contigo es el hecho
+impersonal de que el perfil se compartió alguna vez con alguien.</p>
+<p><strong>Los plazos, en un solo sitio:</strong> historial de tomas 18 meses;
+marcas de eliminación un mes más; copias de seguridad cifradas 14 días; registros
+de accesos pasados 24 meses.</p>
 <p>Puedes eliminar tu cuenta desde la aplicación o escribiendo a la dirección de
 la sección 12.</p>
 
