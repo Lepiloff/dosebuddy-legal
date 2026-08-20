@@ -18,34 +18,102 @@
 <body>
 
 <h1>DoseBuddy — Privacy Policy</h1>
-<p class="updated">Effective date: August 2, 2026 · App: DoseBuddy: Pill Alarm Reminder
+<p class="updated">Effective date: 20 August 2026 · App: DoseBuddy: Pill Alarm Reminder
 (<code>com.everpine.dosebuddy</code>) · Publisher: Yauheni Liapilau
 (sole proprietor / autónomo, Spain), publishing as Everpine</p>
 
 <h2>The short version</h2>
-<p>Your medication data never leaves your device. DoseBuddy has no accounts and
-no sign-up. The names of medications and profiles, schedules, intake history
-and photos you add are stored only on your phone. What does leave your device
-is limited technical data: usage and crash telemetry collected by Google
-services, and a licence check with RevenueCat that tells the app whether
-Premium is active. Both are described below, and neither carries your
-medication data.</p>
+<p>DoseBuddy works without an account, and by default your medication data stays
+on your phone. Nothing about your medication is sent to us unless you choose to
+create an account and turn on family sharing — a feature you have to switch on
+deliberately, and can switch off again.</p>
+<p>If you do turn it on, the medications, schedules and intake history of the
+profiles you own are stored on our server so your other devices, and anyone you
+share a profile with, can see them. That is health data, and this policy sets
+out exactly what is sent, who can see it, and how to get rid of it.</p>
+<p>Separately, and regardless of sharing, limited technical data leaves the app:
+usage and crash telemetry from Google services, and a licence check with
+RevenueCat. Neither carries your medication data.</p>
 
-<h2>1. Data stored only on your device</h2>
-<p>Everything you enter in the app stays in a local database on your phone:</p>
+<h2>1. If you do not use an account</h2>
+<p>Everything you enter stays in a local database on your phone:</p>
 <ul>
   <li>profile names and settings;</li>
   <li>medication names, doses, schedules and package photos;</li>
   <li>intake history (taken / skipped / missed) and stock counts.</li>
 </ul>
-<p>We have no server and no access to this data. It is included in your
-device's standard Android backup (Google's Auto Backup to your own Google
-account, encrypted with your device credentials) so you can restore it on a
-new phone; you can disable backups in Android settings.</p>
+<p>We have no access to it. It is included in your device's standard Android
+backup (Google's Auto Backup to your own Google account, encrypted with your
+device credentials) so you can restore it on a new phone; package photos are
+excluded from that backup, and you can disable backups entirely in Android
+settings.</p>
+<p>Reminders, schedules and history all work in this mode. An account adds
+sharing; it is not needed for the app to do its job.</p>
 
-<h2>2. Data collected automatically</h2>
-<p>To keep the app reliable, the app uses these services, which collect
-limited technical data:</p>
+<h2>2. If you create an account and share a profile</h2>
+
+<h3>Signing in</h3>
+<p>Sign-in is through your Google account. We receive a stable Google account
+identifier and your email address, and nothing else — no password ever reaches
+us, because we never see one. The email is stored encrypted and used only to
+help you if you contact support.</p>
+
+<h3>What is sent to our server</h3>
+<p>For each profile you own:</p>
+<ul>
+  <li>the profile name;</li>
+  <li>medication names, forms, doses, notes and package details;</li>
+  <li>schedules;</li>
+  <li>intake history — which dose was planned when, and whether it was taken,
+  skipped or missed;</li>
+  <li>stock changes.</li>
+</ul>
+<p>Also: an identifier for each of your devices and a notification token, so
+alerts can reach the right phone.</p>
+<p><strong>Package photos are not sent.</strong> They stay on the device that
+took them.</p>
+
+<h3>What someone you share with receives</h3>
+<p>When you share a profile, the person you share it with receives, for that
+profile only: the profile name, the names and forms of the medications, and the
+intake history — enough to see whether a dose was taken. They do not receive
+schedules, stock counts, notes, package details or photos, and they cannot
+change anything.</p>
+<p>Sharing starts with a code that <em>you</em> generate on your own device and
+give to them. They cannot request access; nothing is shared until you hand over
+a code. You choose at that moment whether they simply see the profile or also
+receive alerts. You can see everyone who has access and remove any of them at
+any time. Removal takes effect immediately for the data: they stop being able to
+see the profile at once. One alert that was already queued before you removed
+them can still arrive, for up to six hours — it carries no medication name and
+no profile name, and once access is gone their app can no longer look up what it
+referred to.</p>
+
+<h3>Alerts</h3>
+<p>If you gave someone alerts, they are notified when a dose is reported missed,
+and separately when the profile's phone has not been in contact for a long time.
+Notifications are delivered through Google's Firebase Cloud Messaging. <strong>The
+notification itself contains no medication name</strong> — only a reference their
+app uses to look up the details over an encrypted connection and display them
+locally.</p>
+
+<h3>Legal basis</h3>
+<p>Medication data is health data — a special category under Article 9 of the
+GDPR. We process it on the basis of your <strong>explicit consent</strong>
+(Article 9(2)(a)), given when you turn on sharing. You can withdraw that consent
+at any time by turning sharing off and deleting your account, which removes the
+data from our server. Withdrawing does not affect processing that already
+happened, and it does not affect the app working on your phone.</p>
+
+<h3>Where it is kept, and how it is protected</h3>
+<p>On servers we operate in Frankfurt, Germany (Amazon Web Services,
+<code>eu-central-1</code>) — inside the EU. Data is encrypted in transit with
+TLS. On the server, medication names, profile names, doses and notes are stored
+encrypted; times and statuses are not, because the server needs to read them to
+work out that a dose was missed and send an alert.</p>
+
+<h2>3. Data collected automatically</h2>
+<p>These run whether or not you use an account:</p>
 <ul>
   <li><strong>Firebase Analytics</strong> — usage events (e.g.
   “reminder shown”, “onboarding finished”), app version, device model, OS
@@ -61,62 +129,107 @@ limited technical data:</p>
   name, email or payment details reach us or RevenueCat; payment is processed
   entirely by Google Play.</li>
 </ul>
-<p>These services are operated by Google LLC and RevenueCat, Inc. under their
-own privacy policies:
+
+<h2>4. Who else handles your data</h2>
+<ul>
+  <li><strong>Amazon Web Services</strong> — hosting for the server described in
+  section 2, in the EU. AWS stores the data; it does not use it.</li>
+  <li><strong>Google</strong> — sign-in, notification delivery, analytics and
+  crash reporting.</li>
+  <li><strong>RevenueCat</strong> — the Premium licence check.</li>
+</ul>
+<p>Their own policies:
 <a href="https://policies.google.com/privacy">Google</a>,
 <a href="https://firebase.google.com/support/privacy">Firebase</a>,
+<a href="https://aws.amazon.com/privacy/">AWS</a>,
 <a href="https://www.revenuecat.com/privacy">RevenueCat</a>.</p>
 
-<h2>3. What we never do</h2>
+<h2>5. What we never do</h2>
 <ul>
-  <li>We never transmit your medication names, profile names, schedules,
-  intake history or photos anywhere.</li>
   <li>We never sell your data.</li>
-  <li>We never use your health information for advertising.</li>
+  <li>We never use your health information for advertising, and no advertising
+  is shown on a reminder, an alarm or the large-text screen.</li>
+  <li>We never share your medication data with anyone except the people you
+  yourself gave a sharing code to.</li>
+  <li>We never send medication names in a push notification.</li>
 </ul>
 
-<h2>4. Permissions the app asks for</h2>
+<h2>6. Permissions the app asks for</h2>
 <ul>
-  <li><strong>Notifications & exact alarms</strong> — to deliver medication
+  <li><strong>Notifications &amp; exact alarms</strong> — to deliver medication
   reminders at the exact scheduled time. This is the core function of the
   app.</li>
   <li><strong>Camera / photos</strong> (optional) — only to attach a picture
   of a medication package. Photos stay on your device.</li>
 </ul>
 
-<h2>5. Data retention and deletion</h2>
-<p>On-device data is kept until you delete it in the app or uninstall the
-app (uninstalling removes the local database; a copy may remain in your own
-Google backup until it expires or you delete it). Analytics and crash data
-are retained by Google for a limited period (Firebase Analytics: up to
-14 months) and are not linked to your identity by us.</p>
+<h2>7. Retention and deletion</h2>
+<p><strong>On your phone:</strong> kept until you delete it in the app or
+uninstall the app. Intake history older than 18 months is removed
+automatically. When you delete something, a marker of that deletion stays behind
+for about a month, so your other devices and our server learn the thing is gone
+rather than restoring it; then the marker goes too.</p>
+<p><strong>On our server</strong> (only if you use an account): kept while your
+account exists. The 18-month clear-out is carried out <strong>by your phone, not
+by our server</strong> — the phone removes the old history, and the removal
+travels up with the next sync. It follows that if your phone is lost or wiped
+and you never sign in again, the history already on the server stays there until
+the account is deleted. We would rather say this plainly than let "removed
+automatically" imply a clock on our side that does not exist.</p>
+<p><strong>Deleting your account</strong> takes effect immediately, with no
+grace period. It removes your account, your devices, and the profiles you own
+together with their medications, schedules, intake history and stock records.
+Profiles that other people shared with you are theirs and are not deleted — you
+simply lose access.</p>
+<p><strong>Backups.</strong> The server database is dumped nightly, encrypted,
+and each dump is kept for <strong>14 days</strong>. Deletion is immediate in the
+live database, but a copy of what was deleted can survive in a backup until that
+backup rolls off.</p>
+<p><strong>Records of who had access.</strong> When you remove someone's access
+to a profile, the record that they had it — the role and the dates, never the
+medical contents — is kept for <strong>24 months</strong> and is then deleted.
+It is kept because "who could see this, and when" is a question you or they may
+put to us, and a row deleted at the moment of revocation cannot answer it. If
+that person deletes their own DoseBuddy account first, their identity is erased
+from the record straight away; what remains with you is the impersonal fact that
+the profile was once shared with somebody.</p>
+<p><strong>The periods in one place:</strong> intake history 18 months; deletion
+markers a further month; encrypted backups 14 days; records of past access 24
+months.</p>
+<p>You can delete your account from within the app, or by writing to the address
+in section 12.</p>
 
-<h2>6. Children</h2>
+<h2>8. Your rights</h2>
+<p>If you use the app without an account, we hold no medical data about you, and
+access, correction and deletion happen on your phone.</p>
+<p>If you use an account, you have the rights the GDPR gives you over the data
+on our server: access, correction, deletion, restriction, objection, and a copy
+in a portable form. Write to the address in section 12 and we will answer within
+one month. You may also complain to your national data protection authority; in
+Spain that is the <a href="https://www.aepd.es/">AEPD</a>.</p>
+
+<h2>9. Children</h2>
 <p>DoseBuddy is intended for adults (18+) who manage their own or a family
 member's medication. It is not directed at children under 13.</p>
 
-<h2>7. Your rights</h2>
-<p>Because your medical data is stored only on your device, and what is sent
-outside is tied to an installation identifier rather than to you, most privacy
-rights (access, correction, deletion) are exercised directly on your phone. If you are in the EU/EEA and have any request or
-question under the GDPR, contact us and we will help.</p>
-
-<h2>8. Not a medical device</h2>
+<h2>10. Not a medical device</h2>
 <p>DoseBuddy is a reminder organizer. It is not a medical device and does not
 diagnose, treat, cure, or prevent any medical condition. Always consult your
 doctor or pharmacist for medical advice.</p>
 
-<h2>9. Changes to this policy</h2>
-<p>If we change this policy (for example, when adding new features), we will
-update this page and the effective date above.</p>
+<h2>11. Changes to this policy</h2>
+<p>If we change this policy, we will update this page and the effective date
+above. If a change means we would process your health data in a way you have not
+already agreed to, we will ask you again rather than assume.</p>
 
-<h2>10. Contact</h2>
-<p>Questions about privacy: <a href="mailto:lepiloff82@gmail.com">lepiloff82@gmail.com</a></p>
+<h2>12. Contact</h2>
+<p>Questions about privacy, or any request under section 8:
+<a href="mailto:support@everpine.app">support@everpine.app</a></p>
 
 <hr>
 
 <h1 lang="es">DoseBuddy — Política de Privacidad</h1>
-<p class="updated" lang="es">Fecha de entrada en vigor: 22 de julio de 2026 ·
+<p class="updated" lang="es">Fecha de entrada en vigor: 20 de agosto de 2026 ·
 Aplicación: DoseBuddy — Recordatorio (<code>com.everpine.dosebuddy</code>) ·
 Editor: Yauheni Liapilau (trabajador autónomo, España), operando como
 Everpine</p>
@@ -124,31 +237,100 @@ Everpine</p>
 <div lang="es">
 
 <h2>La versión corta</h2>
-<p>Tus datos de medicación nunca salen de tu dispositivo. DoseBuddy no tiene
-cuentas ni registro. Los nombres de medicamentos y perfiles, los horarios, el
-historial de tomas y las fotos que añadas se guardan solo en tu teléfono. Lo
-que sí sale del dispositivo son datos técnicos limitados: telemetría de uso y
-de fallos recogida por servicios de Google, y una comprobación de licencia con
-RevenueCat que indica a la app si Premium está activo. Ambas se describen
-abajo, y ninguna lleva tus datos de medicación.</p>
+<p>DoseBuddy funciona sin cuenta, y de forma predeterminada tus datos de
+medicación se quedan en tu teléfono. No nos llega nada sobre tu medicación salvo
+que decidas crear una cuenta y activar el uso compartido en familia: una función
+que activas deliberadamente y puedes desactivar.</p>
+<p>Si la activas, los medicamentos, horarios e historial de tomas de los perfiles
+que te pertenecen se guardan en nuestro servidor para que tus otros dispositivos,
+y las personas con quienes compartas un perfil, puedan verlos. Eso son datos de
+salud, y esta política explica exactamente qué se envía, quién puede verlo y cómo
+eliminarlo.</p>
+<p>Aparte de eso, y con o sin uso compartido, salen de la aplicación datos
+técnicos limitados: telemetría de uso y de fallos de servicios de Google, y una
+comprobación de licencia con RevenueCat. Ninguna lleva tus datos de
+medicación.</p>
 
-<h2>1. Datos guardados solo en tu dispositivo</h2>
-<p>Todo lo que introduces en la aplicación se guarda en una base de datos
-local en tu teléfono:</p>
+<h2>1. Si no usas cuenta</h2>
+<p>Todo lo que introduces se guarda en una base de datos local en tu teléfono:</p>
 <ul>
   <li>nombres de perfiles y ajustes;</li>
   <li>nombres de medicamentos, dosis, horarios y fotos del envase;</li>
   <li>historial de tomas (tomada / omitida / no tomada) y existencias.</li>
 </ul>
-<p>No tenemos servidor ni acceso a estos datos. Se incluyen en la copia de
-seguridad estándar de Android (Auto Backup de Google en tu propia cuenta de
-Google, cifrada con las credenciales de tu dispositivo) para que puedas
-restaurarlos en un teléfono nuevo; puedes desactivar las copias en los
+<p>No tenemos acceso a ello. Se incluye en la copia de seguridad estándar de
+Android (Auto Backup de Google en tu propia cuenta, cifrada con las credenciales
+de tu dispositivo) para que puedas restaurarlo en un teléfono nuevo; las fotos
+del envase quedan excluidas de esa copia, y puedes desactivar las copias en los
 ajustes de Android.</p>
+<p>Los recordatorios, los horarios y el historial funcionan así. La cuenta añade
+el uso compartido; no hace falta para que la aplicación cumpla su función.</p>
 
-<h2>2. Datos recogidos automáticamente</h2>
-<p>Para mantener la fiabilidad de la aplicación, esta usa estos servicios,
-que recogen datos técnicos limitados:</p>
+<h2>2. Si creas una cuenta y compartes un perfil</h2>
+
+<h3>Inicio de sesión</h3>
+<p>El acceso es con tu cuenta de Google. Recibimos un identificador estable de
+esa cuenta y tu correo electrónico, y nada más: ninguna contraseña nos llega,
+porque nunca vemos ninguna. El correo se guarda cifrado y solo se usa para
+ayudarte si escribes a soporte.</p>
+
+<h3>Qué se envía a nuestro servidor</h3>
+<p>De cada perfil que te pertenece:</p>
+<ul>
+  <li>el nombre del perfil;</li>
+  <li>nombres de medicamentos, formas, dosis, notas y datos del envase;</li>
+  <li>los horarios;</li>
+  <li>el historial de tomas: qué dosis estaba prevista y cuándo, y si se tomó,
+  se omitió o no se tomó;</li>
+  <li>los cambios de existencias.</li>
+</ul>
+<p>También: un identificador de cada uno de tus dispositivos y un testigo de
+notificaciones, para que los avisos lleguen al teléfono correcto.</p>
+<p><strong>Las fotos del envase no se envían.</strong> Se quedan en el
+dispositivo que las hizo.</p>
+
+<h3>Qué recibe la persona con quien compartes</h3>
+<p>Cuando compartes un perfil, esa persona recibe, solo de ese perfil: el nombre
+del perfil, los nombres y formas de los medicamentos y el historial de tomas —
+lo justo para ver si una dosis se tomó. No recibe horarios, existencias, notas,
+datos del envase ni fotos, y no puede modificar nada.</p>
+<p>El uso compartido empieza con un código que generas <em>tú</em> en tu propio
+dispositivo y le entregas. Nadie puede solicitar acceso; no se comparte nada
+hasta que tú das un código. En ese momento eliges si solo verá el perfil o si
+además recibirá avisos. Puedes consultar quién tiene acceso y retirárselo a
+cualquiera en cualquier momento. La retirada es inmediata para los datos: deja
+de ver el perfil al instante. Un aviso que ya estuviera en cola antes de la
+retirada todavía puede llegar, hasta seis horas después; no lleva ningún nombre
+de medicamento ni de perfil, y su aplicación ya no puede consultar a qué se
+refería.</p>
+
+<h3>Avisos</h3>
+<p>Si le diste avisos, se le notifica cuando una dosis se registra como no
+tomada, y por separado cuando el teléfono del perfil lleva mucho tiempo sin dar
+señales. Las notificaciones se entregan mediante Firebase Cloud Messaging de
+Google. <strong>La notificación no contiene ningún nombre de medicamento</strong>:
+solo una referencia que su aplicación usa para consultar los detalles por una
+conexión cifrada y mostrarlos localmente.</p>
+
+<h3>Base jurídica</h3>
+<p>Los datos de medicación son datos de salud, una categoría especial según el
+artículo 9 del RGPD. Los tratamos sobre la base de tu <strong>consentimiento
+explícito</strong> (artículo 9.2.a), que das al activar el uso compartido. Puedes
+retirarlo en cualquier momento desactivando el uso compartido y eliminando tu
+cuenta, lo que borra los datos de nuestro servidor. La retirada no afecta al
+tratamiento ya realizado, ni al funcionamiento de la aplicación en tu
+teléfono.</p>
+
+<h3>Dónde se guarda y cómo se protege</h3>
+<p>En servidores que operamos en Fráncfort, Alemania (Amazon Web Services,
+<code>eu-central-1</code>), dentro de la UE. Los datos viajan cifrados con TLS.
+En el servidor, los nombres de medicamentos y de perfiles, las dosis y las notas
+se guardan cifrados; las horas y los estados no, porque el servidor necesita
+leerlos para
+deducir que una dosis no se tomó y enviar el aviso.</p>
+
+<h2>3. Datos recogidos automáticamente</h2>
+<p>Esto ocurre uses o no uses cuenta:</p>
 <ul>
   <li><strong>Firebase Analytics</strong> — eventos de uso (p. ej.
   «recordatorio mostrado»), versión de la aplicación, modelo del dispositivo,
@@ -165,20 +347,33 @@ que recogen datos técnicos limitados:</p>
   para validarla. Ni tu nombre, ni tu correo, ni tus datos de pago llegan a
   nosotros ni a RevenueCat; el pago lo procesa íntegramente Google Play.</li>
 </ul>
-<p>Estos servicios los operan Google LLC y RevenueCat, Inc. con sus propias
-políticas: <a href="https://policies.google.com/privacy">Google</a>,
+
+<h2>4. Quién más trata tus datos</h2>
+<ul>
+  <li><strong>Amazon Web Services</strong> — alojamiento del servidor descrito en
+  la sección 2, en la UE. AWS guarda los datos; no los utiliza.</li>
+  <li><strong>Google</strong> — inicio de sesión, entrega de notificaciones,
+  analítica e informes de fallos.</li>
+  <li><strong>RevenueCat</strong> — la comprobación de la licencia Premium.</li>
+</ul>
+<p>Sus propias políticas:
+<a href="https://policies.google.com/privacy">Google</a>,
 <a href="https://firebase.google.com/support/privacy">Firebase</a>,
+<a href="https://aws.amazon.com/privacy/">AWS</a>,
 <a href="https://www.revenuecat.com/privacy">RevenueCat</a>.</p>
 
-<h2>3. Lo que nunca hacemos</h2>
+<h2>5. Lo que nunca hacemos</h2>
 <ul>
-  <li>Nunca transmitimos los nombres de tus medicamentos o perfiles, los
-  horarios, el historial de tomas ni las fotos.</li>
   <li>Nunca vendemos tus datos.</li>
-  <li>Nunca usamos tu información de salud para publicidad.</li>
+  <li>Nunca usamos tu información de salud para publicidad, y no se muestra
+  publicidad en un recordatorio, una alarma ni en la pantalla de texto
+  grande.</li>
+  <li>Nunca compartimos tus datos de medicación con nadie salvo con las personas
+  a las que tú diste un código.</li>
+  <li>Nunca enviamos nombres de medicamentos en una notificación.</li>
 </ul>
 
-<h2>4. Permisos que solicita la aplicación</h2>
+<h2>6. Permisos que solicita la aplicación</h2>
 <ul>
   <li><strong>Notificaciones y alarmas exactas</strong> — para entregar los
   recordatorios a la hora exacta programada. Es la función principal de la
@@ -187,38 +382,71 @@ políticas: <a href="https://policies.google.com/privacy">Google</a>,
   del envase del medicamento. Las fotos permanecen en tu dispositivo.</li>
 </ul>
 
-<h2>5. Conservación y eliminación de datos</h2>
-<p>Los datos locales se conservan hasta que los borres en la aplicación o la
-desinstales (al desinstalar se elimina la base de datos local; puede quedar
-una copia en tu propia copia de seguridad de Google hasta que caduque o la
-elimines). Google conserva los datos de analítica y fallos durante un periodo
-limitado (Firebase Analytics: hasta 14 meses) y nosotros no los vinculamos a
-tu identidad.</p>
+<h2>7. Conservación y eliminación</h2>
+<p><strong>En tu teléfono:</strong> se conserva hasta que lo borres en la
+aplicación o la desinstales. El historial de tomas de más de 18 meses se elimina
+automáticamente. Cuando borras algo, queda una marca de esa eliminación durante
+un mes aproximadamente, para que tus otros dispositivos y nuestro servidor se
+enteren de que ya no está en vez de restaurarlo; después la marca también
+desaparece.</p>
+<p><strong>En nuestro servidor</strong> (solo si usas cuenta): mientras exista tu
+cuenta. La limpieza de los 18 meses la hace <strong>tu teléfono, no nuestro
+servidor</strong>: el teléfono elimina el historial antiguo y esa eliminación
+sube con la siguiente sincronización. De ahí se sigue que, si pierdes el teléfono
+o lo borras y no vuelves a iniciar sesión, el historial que ya está en el
+servidor permanece allí hasta que elimines la cuenta. Preferimos decirlo con
+claridad antes que dejar que «se elimina automáticamente» sugiera un reloj de
+nuestro lado que no existe.</p>
+<p><strong>Eliminar tu cuenta</strong> tiene efecto inmediato, sin periodo de
+gracia. Se borran la cuenta, tus dispositivos y los perfiles que te pertenecen
+junto con sus medicamentos, horarios, historial de tomas y existencias. Los
+perfiles que otras personas compartieron contigo son suyos y no se borran:
+simplemente pierdes el acceso.</p>
+<p><strong>Copias de seguridad.</strong> La base de datos del servidor se vuelca
+cada noche, cifrada, y cada volcado se conserva <strong>14 días</strong>. La
+eliminación es inmediata en la base de datos viva, pero una copia de lo eliminado
+puede sobrevivir en una copia de seguridad hasta que esta rote.</p>
+<p><strong>Registros de quién tuvo acceso.</strong> Cuando retiras a alguien el
+acceso a un perfil, el registro de que lo tuvo —el rol y las fechas, nunca el
+contenido médico— se conserva <strong>24 meses</strong> y después se elimina. Se
+conserva porque «quién pudo ver esto y cuándo» es una pregunta que tú o esa
+persona podéis hacernos, y una fila borrada en el momento de la retirada no puede
+responderla. Si esa persona elimina antes su propia cuenta de DoseBuddy, su
+identidad se borra del registro de inmediato; lo que queda contigo es el hecho
+impersonal de que el perfil se compartió alguna vez con alguien.</p>
+<p><strong>Los plazos, en un solo sitio:</strong> historial de tomas 18 meses;
+marcas de eliminación un mes más; copias de seguridad cifradas 14 días; registros
+de accesos pasados 24 meses.</p>
+<p>Puedes eliminar tu cuenta desde la aplicación o escribiendo a la dirección de
+la sección 12.</p>
 
-<h2>6. Menores</h2>
+<h2>8. Tus derechos</h2>
+<p>Si usas la aplicación sin cuenta, no tenemos ningún dato médico tuyo, y el
+acceso, la rectificación y la supresión se hacen en tu teléfono.</p>
+<p>Si usas cuenta, tienes sobre los datos de nuestro servidor los derechos que te
+reconoce el RGPD: acceso, rectificación, supresión, limitación, oposición y una
+copia en formato portable. Escribe a la dirección de la sección 12 y
+responderemos en el plazo de un mes. También puedes reclamar ante tu autoridad de
+protección de datos; en España, la <a href="https://www.aepd.es/">AEPD</a>.</p>
+
+<h2>9. Menores</h2>
 <p>DoseBuddy está destinada a adultos (18+) que gestionan su propia
 medicación o la de un familiar. No está dirigida a menores de 13 años.</p>
 
-<h2>7. Tus derechos</h2>
-<p>Como tus datos médicos se guardan solo en tu dispositivo y la telemetría
-va asociado a un identificador de instalación y no a ti, la mayoría de los
-derechos de privacidad (acceso, rectificación,
-supresión) se ejercen directamente en tu teléfono. Si estás en la UE/EEE y
-tienes cualquier solicitud o pregunta según el RGPD, contáctanos y te
-ayudaremos.</p>
-
-<h2>8. No es un producto sanitario</h2>
+<h2>10. No es un producto sanitario</h2>
 <p>DoseBuddy es un organizador de recordatorios. No es un producto sanitario
 y no diagnostica, trata, cura ni previene ninguna condición médica. Consulta
 siempre a tu médico o farmacéutico.</p>
 
-<h2>9. Cambios en esta política</h2>
-<p>Si cambiamos esta política (por ejemplo, al añadir nuevas funciones),
-actualizaremos esta página y la fecha de entrada en vigor.</p>
+<h2>11. Cambios en esta política</h2>
+<p>Si cambiamos esta política, actualizaremos esta página y la fecha de entrada
+en vigor. Si un cambio implicara tratar tus datos de salud de una forma que no
+hayas aceptado ya, te lo preguntaremos de nuevo en lugar de darlo por
+supuesto.</p>
 
-<h2>10. Contacto</h2>
-<p>Preguntas sobre privacidad:
-<a href="mailto:lepiloff82@gmail.com">lepiloff82@gmail.com</a></p>
+<h2>12. Contacto</h2>
+<p>Preguntas sobre privacidad, o cualquier solicitud de la sección 8:
+<a href="mailto:support@everpine.app">support@everpine.app</a></p>
 
 </div>
 
